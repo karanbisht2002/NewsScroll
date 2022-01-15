@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".NewDetailsActivity"
+    android:background="@color/black">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleTextColor="@color/purple_200"
+        app:title="News App"
+        android:id="@+id/toolbarid_details"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollview_details"
+        android:layout_below="@id/toolbarid_details">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image_id_newsdetails"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:scaleType="centerCrop"
+                android:src="@color/purple_700" />
+
+            <TextView
+                android:id="@+id/text_view_headlines"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_id_newsdetails"
+                android:text="This is news Headlines"
+                android:textColor="@color/purple_200"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:padding="5dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textview_news_description"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_view_headlines"
+                android:text="This is default Text Descriptions"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:padding="5dp"
+                android:textStyle="italic"
+                android:id="@+id/textview_news_description"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textview_news_description"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contant"
+                android:layout_below="@id/textview_news_description"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:maxLines="4"
+                android:id="@+id/text_view_contant"/>
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Read More"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/button_read_more"
+        />
+
+</RelativeLayout>
