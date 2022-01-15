@@ -55,27 +55,12 @@ public class CategoriesRVAdapter extends RecyclerView.Adapter<CategoriesRVAdapte
                 notifyDataSetChanged();
             }
         });
-      /*  holder.catimageview.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //  holder.cardView.animate();
-              //  holder.cardView.getMaxCardElevation();
-                categoriesClickInterface.onCategoriesclick(position);
-           //holder.catimageview.setVisibility(View.GONE);
-               // holder.recyclerViewe.requestFocus(position);
-            }
-        });
-        */
-
         if(selected_position==position)
         {
-            holder.cardView.setBackgroundColor(Color.RED);
-            //holder.cardView.setRadius(100.0f);
             holder.cardView.setBackgroundResource(R.drawable.design);
         }
         else
         {
-            holder.cardView.setBackgroundColor(Color.BLACK);
             holder.cardView.setRadius(0.0f);
         }
 

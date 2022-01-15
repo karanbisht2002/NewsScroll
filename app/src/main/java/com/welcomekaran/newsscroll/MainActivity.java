@@ -52,12 +52,11 @@ public class MainActivity extends AppCompatActivity implements CategoriesRVAdapt
 
     private void getCatogries()
     {
-        categoriesRVAdapterArrayList.add(new CategorieyRVModal("ALL","https://images.unsplash.com/photo-1502139214982-d0ad755818d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGdlbmVyYWwlMjB0ZXh0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60"));
+        categoriesRVAdapterArrayList.add(new CategorieyRVModal("ALL","https://play-lh.googleusercontent.com/xt-x1NVR2mc0dti19d9pHaIC6wUL7xiveEZ5GJrX904dAYZo_NaMZyWo0K_96QGuQ_qj"));
         categoriesRVAdapterArrayList.add(new CategorieyRVModal("Technology","https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dGVjaG5vbG9neXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60"));
         categoriesRVAdapterArrayList.add(new CategorieyRVModal("Science","https://media.istockphoto.com/photos/vaccine-in-laboratory-flu-shot-and-covid19-vaccination-picture-id1289345741?b=1&k=20&m=1289345741&s=170667a&w=0&h=oG8iaDNP4rOLSgXWfeSziU3Vyu6KJS9Hn2ORohzSsRg="));
-        categoriesRVAdapterArrayList.add(new CategorieyRVModal("General","https://images.unsplash.com/photo-1502139214982-d0ad755818d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGdlbmVyYWwlMjB0ZXh0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60"));
-        categoriesRVAdapterArrayList.add(new CategorieyRVModal("Sports","https://media.istockphoto.com/photos/silhouette-of-construction-worker-with-crane-and-cloudy-sky-for-of-picture-id1315126660?b=1&k=20&m=1315126660&s=170667a&w=0&h=eI-Rvh1qzcewMzsbF_OJotnEtBjTIwyZBs6jVe8537E="));
-        categoriesRVAdapterArrayList.add(new CategorieyRVModal("Entertainment","https://media.istockphoto.com/photos/silhouette-of-construction-worker-with-crane-and-cloudy-sky-for-of-picture-id1315126660?b=1&k=20&m=1315126660&s=170667a&w=0&h=eI-Rvh1qzcewMzsbF_OJotnEtBjTIwyZBs6jVe8537E="));
+        categoriesRVAdapterArrayList.add(new CategorieyRVModal("Sports","https://media.istockphoto.com/photos/various-sport-equipments-on-grass-picture-id949190736?b=1&k=20&m=949190736&s=170667a&w=0&h=f3ofVqhbmg2XSVOa3dqmvGtHc4VLA_rtbboRGaC8eNo="));
+        categoriesRVAdapterArrayList.add(new CategorieyRVModal("Entertainment","https://media.istockphoto.com/photos/popcorn-and-clapperboard-picture-id1191001701?b=1&k=20&m=1191001701&s=170667a&w=0&h=uVqDpnXNtnfbhB-F4sWac_t3oL_YSrDuHeCKdaJGS3U="));
         categoriesRVAdapterArrayList.add(new CategorieyRVModal("Health","https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8aGVhbHRofGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60"));
          categoriesRVAdapter.notifyDataSetChanged();
     }
@@ -66,9 +65,9 @@ public class MainActivity extends AppCompatActivity implements CategoriesRVAdapt
     {
        // progressBar.setVisibility(View.VISIBLE);
         articlesArrayList.clear();
-        String myapi="https://newsapi.org/v2/top-headlines?category=General&apiKey=c310103670034a7a98bde5d8d682c1ec";
-        String category1="https://newsapi.org/v2/top-headlines?country=in&category="+categories+"&apiKey=c310103670034a7a98bde5d8d682c1ec";
-        String url="https://newsapi.org/v2/top-headlines?country=in&excludeDomains=stackoverflow.com&sortBy=publishedAt&language=en&apiKey=c310103670034a7a98bde5d8d682c1ec";
+        String myapi="https://newsapi.org/v2/top-headlines?category=General&apiKey=b47fc9b4e93d47bbb35075c2e0085e2c";
+        String category1="https://newsapi.org/v2/top-headlines?country=in&category="+categories+"&apiKey=b47fc9b4e93d47bbb35075c2e0085e2c";
+        String url="https://newsapi.org/v2/top-headlines?country=in&excludeDomains=stackoverflow.com&sortBy=publishedAt&language=en&apiKey=b47fc9b4e93d47bbb35075c2e0085e2c";
         String base_url="https://newsapi.org";
         Retrofit retrofit=new Retrofit.Builder()
                 .baseUrl(base_url)
@@ -93,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements CategoriesRVAdapt
                  ArrayList<Articles> articles =newsModal.getArticles();
                  for(int i=0;i<articles.size();i++)
                  {
-                     articlesArrayList.add(new Articles(articles.get(i).getTitle(),articles.get(i).getDescription(),articles.get(i).getUrl(),articles.get(i).getUrlToImage(),articles.get(i).getContent()));
+                     articlesArrayList.add(new Articles(articles.get(i).getTitle(),articles.get(i).getDescription(),articles.get(i).getUrl(),articles.get(i).getUrlToImage(),articles.get(i).getPublishedAt(),articles.get(i).getContent()));
                  }
 
                  newsRVAdapter.notifyDataSetChanged();

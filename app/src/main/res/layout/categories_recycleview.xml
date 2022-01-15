@@ -21,6 +21,10 @@
             android:src="@color/purple_200"
             android:scaleType="centerCrop"
             />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradientbackground"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -30,8 +34,9 @@
             android:textColor="@color/white"
             android:id="@+id/cat_text"
             android:gravity="center"
-            android:layout_centerInParent="true"/>
-
+            android:textSize="18sp"
+            android:layout_alignParentBottom="true"
+            />
 
     </RelativeLayout>
 

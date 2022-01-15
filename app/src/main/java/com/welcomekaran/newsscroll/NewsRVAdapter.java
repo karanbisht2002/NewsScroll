@@ -40,6 +40,7 @@ public class NewsRVAdapter extends RecyclerView.Adapter<NewsRVAdapter.ViewHolder
         Picasso.get().load(articles.getUrlToImage()).into(holder.image);
         holder.title.setText(articles.getTitle());
         holder.subtitle.setText(articles.getDescription());
+        holder.publish.setText(articles.getPublishedAt());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,6 +50,7 @@ public class NewsRVAdapter extends RecyclerView.Adapter<NewsRVAdapter.ViewHolder
                 intent.putExtra("contant",articles.getContent());
                 intent.putExtra("url",articles.getUrl());
                 intent.putExtra("image",articles.getUrlToImage());
+                intent.putExtra("publish",articles.getPublishedAt());
                 context.startActivity(intent);
             }
         });
@@ -63,13 +65,15 @@ public class NewsRVAdapter extends RecyclerView.Adapter<NewsRVAdapter.ViewHolder
 
     public class ViewHolderclass extends RecyclerView.ViewHolder
     {
-             private TextView title,subtitle;
+             private TextView title,subtitle,publish;
              private ImageView image;
         public ViewHolderclass(@NonNull View itemView) {
             super(itemView);
             title=itemView.findViewById(R.id.news_headline);
             subtitle=itemView.findViewById(R.id.news_desc);
             image=itemView.findViewById(R.id.news_image_view);
+            publish=itemView.findViewById(R.id.publish_id);
+
 
         }
     }

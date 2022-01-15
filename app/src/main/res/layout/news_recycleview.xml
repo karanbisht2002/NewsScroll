@@ -38,6 +38,13 @@
             android:textSize="15sp"
             android:layout_below="@id/news_headline"
             android:textColor="@color/black"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Puclish"
+            android:id="@+id/publish_id"
+            android:layout_below="@id/news_desc"
+            android:textSize="13sp"/>
 
 
 
